@@ -171,8 +171,8 @@ input[type=text]:placeholder {
 @-webkit-keyframes fadeInDown {
   0% {
     opacity: 0;
-    -webkit-transform: translate3d(0, 100%, 0);
-    transform: translate3d(0, 100%, 0);
+    -webkit-transform: translate3d(100%, 0, 0);
+    transform: translate3d(100%, 0, 0);
   }
   100% {
     opacity: 1;
@@ -184,8 +184,8 @@ input[type=text]:placeholder {
 @keyframes fadeInDown {
   0% {
     opacity: 0;
-    -webkit-transform: translate3d(0, 100%, 0);
-    transform: translate3d(0, 100%, 0);
+    -webkit-transform: translate3d(100%, 0, 0);
+    transform: translate3d(100%, 0, 0);
   }
   100% {
     opacity: 1;
@@ -310,35 +310,61 @@ input[type=text]:placeholder {
     <script src="./lib/bootstrap.min.js.transferir"></script>
 </head>
 <body cz-shortcut-listen="true">
-    <div id="wrapper" class="wrapper fadeInDown">
+    <div id="wrapper" class="wrapper">
   <div id="formContent">
     <!-- Tabs Titles -->
 
     <!-- Icon -->
     <div class="fadeIn first">
-      <img src="./lib/icon.PNG" id="icon" alt="User Icon">
     </div>
 
-    <!-- Login Form -->
-    <form onsubmit="login(e);">
-      <label class="fadeIn second" for="login">Entre com o seu CPF</label>
-      <input type="text" id="login" class="fadeIn second" name="login" placeholder="CPF">
-      <input type="submit" id="submit" class="fadeIn fourth" value="Acessar">
+    <form style="padding: 15px;" onsubmit="login(e);">
+
+      <div id="nome" class="" ></div><br/>
+      <div id="curso" class="" ></div>
+
+      <br><br>
+      <button type="button" class="btn btn-primary">Gerar Comprovante<br> de Matrícula</button>
     </form>
 
+
     <!-- Remind Passowrd -->
-    <div id="formFooter">
-      <a class="underlineHover" href="https://senhadc.sertao.ifrs.edu.br/?action=sendtoken">Forgot Password?</a>
-    </div>
+
 
   </div>
 </div>	<script type="text/javascript">
-document.getElementById("submit").addEventListener("click", function(event){
-  event.preventDefault();
-  document.getElementById("wrapper").classList.add("fadeout");
-  setTimeout(() => {location.replace("/consulta.html#"+document.getElementById("login").value)}, 500);
-  
+
+  var data = null;
+
+var xhr = new XMLHttpRequest();
+xhr.withCredentials = true;
+
+xhr.addEventListener("readystatechange", function () {
+  if (this.readyState === this.DONE) {
+    console.log(JSON.parse(this.response));
+    document.getElementById("nome").innerText = titleize(JSON.parse(this.response).sig.nome_completo);
+    document.getElementById("curso").innerText = titleize(JSON.parse(this.response).sig.cursos[0].nome_curso);
+    document.getElementById("wrapper").classList.add("fadeInDown");
+    document.getElementById("nome").classList.add("fadeIn");
+    document.getElementById("curso").classList.add("fadeIn");
+
+    
+  }
 });
+
+xhr.open("GET", "https://cors-anywhere.herokuapp.com/https://api.sertao.ifrs.edu.br:8443/aluno/"+document.location.href.split('#')[1]+"?key=b'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyIjoiMjAxOTMwOTczNSIsImV4cCI6WyI3NzciXX0.xL4HJI3benIOVokDd0Bf6UTUar1wZtm4nA28P41uTKs'");
+xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+xhr.withCredentials = false;
+xhr.send(data);
+
+function titleize(text) {
+    var words = text.toLowerCase().split(" ");
+    for (var a = 0; a < words.length; a++) {
+        var w = words[a];
+        words[a] = w[0].toUpperCase() + w.slice(1);
+    }
+    return words.join(" ");
+}
 		</script>
 
 
