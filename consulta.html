@@ -328,7 +328,7 @@ input[type=text]:placeholder {
       <div id="curso" class="" ></div>
 
       <br><br>
-      <button type="button" class="btn btn-primary">Gerar Comprovante<br> de Matrícula</button>
+      <button id="atestado_matricula" type="button" class="btn btn-primary">Gerar Comprovante<br> de Matrícula</button>
     </form>
 
 
@@ -337,6 +337,10 @@ input[type=text]:placeholder {
 
   </div>
 </div>	<script type="text/javascript">
+
+document.getElementById("atestado_matricula").addEventListener("click", function(event){
+	location.replace("/meu_acesso/consulta.html#"+document.location.href.split('#')[1]);
+});
 
   var data = null;
 

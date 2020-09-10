@@ -1,0 +1,188 @@
+
+<!-- saved from url=(0060)https://sig.ifrs.edu.br/sigaa/portais/discente/discente.jsf# -->
+<html class="background" xmlns="http://www.w3.org/1999/xhtml"><head><html lang="pt-BR"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+	<title>Matrícula</title>
+	
+	<link class="component" href="./AT_files/eAF7sqpgb-jyGdIAFrMEaw__.jsf" rel="stylesheet" type="text/css"><link class="component" href="./AT_files/eAF7sqpgb-jyGdIAFrMEaw__(1).jsf" rel="stylesheet" type="text/css"><script type="text/javascript">window.RICH_FACES_EXTENDED_SKINNING_ON=true;</script><script src="./AT_files/skinning.js.jsf" type="text/javascript"></script><script type="text/javascript" src="./AT_files/jawr_loader.js.transferir"></script>
+	<script type="text/javascript">
+		JAWR.loader.style('/bundles/css/sigaa_base.css','all');
+		JAWR.loader.style('/css/ufrn_relatorio.css','all');
+		JAWR.loader.style('/css/ufrn_print.css', 'print');
+
+		JAWR.loader.script('/bundles/js/sigaa_base.js');
+	</script> <link rel="stylesheet" type="text/css" media="all" href="./AT_files/sigaa_base.css">  <link rel="stylesheet" type="text/css" media="all" href="./AT_files/ufrn_relatorio.css">  <link rel="stylesheet" type="text/css" media="print" href="./AT_files/ufrn_print.css">  <script type="text/javascript" src="./AT_files/sigaa_base.js.transferir"> </script> 
+	<link rel="stylesheet" type="text/css" media="all" href="./AT_files/sigaa.css">
+
+	<link rel="stylesheet" media="all" href="./AT_files/ufrn.css">
+</head>
+
+<body cz-shortcut-listen="true">
+
+<div id="relatorio-container">
+
+		<div id="relatorio-cabecalho">
+			<div id="ufrn"><img src="./AT_files/brasao_ifrs.png" height="40"> <br> <a href="https://sig.ifrs.edu.br/sigaa/verPortalDiscente.do">Portal do Discente</a></div>
+			<div id="sinfo"><img src="./AT_files/brasao_ifrs_cgti.png" height="50">  </div>
+			<div id="texto">
+				Instituto Federal do Rio Grande do Sul<br>
+				CAMPUS SERTAO<br>
+				
+				
+
+				
+				<br>
+				<span class="dataAtual"> Emitido em 10/09/2020 09:57 </span>
+			</div>
+		<div class="clear"> </div>	
+		</div>
+		<div id="relatorio">
+
+		<br>
+
+<link rel="stylesheet" media="all" href="./AT_files/atestado_matricula.css" type="text/css">
+
+
+<h3>Atestado de Matrícula</h3>
+
+
+<table id="identificacao">
+	<tbody><tr>
+		<td>
+            Ano
+             Letivo:
+        </td>
+		<td>
+			<strong>
+            2020
+            
+		  	</strong>
+            
+		</td>
+		<td>status:</td>
+		<td><strong id="status_discente"></strong></td>
+	</tr>
+	<tr>
+		<td width="20%">Matrícula:</td>
+		<td width="45%"> <strong id="matricula"></strong></td>
+		<td width="10%"> turma de entrada: </td>
+		<td> <strong id="turma_entrada"></strong> </td>
+	</tr>
+	<tr>
+		<td>Nome: </td>
+		<td colspan="3"><strong id="nome"></strong></td>
+	</tr>
+	
+	
+		<tr><td>Curso: </td> 
+		<td colspan="3"><strong id="curso">  </strong></td>
+	
+	
+	
+</tr></tbody></table>
+
+<br>
+
+
+
+
+
+
+	<br>
+	
+	
+
+	<br>
+	
+	<br>
+
+
+
+<div id="autenticacao">
+	<h4>ATENÇÃO</h4>
+	<p>
+		Para verificar a autenticidade deste documento acesse
+		<span id="link"></span> 
+	</p>
+</div>
+
+
+
+
+</div> 
+	<div class="clear"> </div>
+	<br>
+	<div id="relatorio-rodape">
+		<p>
+			<table width="100%">
+				<tbody><tr>
+					<td class="voltar" align="left">
+						
+						 	<a href="javascript:history.back();"> Voltar </a>
+						
+						
+					</td>
+					<td width="70%" align="center">
+					Meu acesso | Ateliê do software - | Copyright © 2020 
+</td>
+					<td class="naoImprimir" align="right">
+						<a onclick="javascript:window.print();" href="#">Imprimir</a>
+					</td>
+					<td class="naoImprimir" align="right">
+						<a onclick="javascript:window.print();" href="#">							
+							<img alt="Imprimir" title="Imprimir" src="./AT_files/print.gif">
+						</a>
+					</td>
+				</tr>
+			</tbody></table>
+		</p>
+
+	</div>
+</div>  
+<script type="text/javascript">
+
+	var data = null;
+  
+  var xhr = new XMLHttpRequest();
+  xhr.withCredentials = true;
+  
+  xhr.addEventListener("readystatechange", function () {
+	if (this.readyState === this.DONE) {
+	  console.log(JSON.parse(this.response));
+	  document.getElementById("nome").innerText = titleize(JSON.parse(this.response).sig.nome_completo);
+	  document.getElementById("curso").innerText = titleize(JSON.parse(this.response).sig.cursos[0].nome_curso);
+	  document.getElementById("matricula").innerText = JSON.parse(this.response).sig.cursos[0].matricula;
+	  document.getElementById("status_discente").innerText = titleize(JSON.parse(this.response).sig.cursos[0].status_discente);
+	  document.getElementById("turma_entrada").innerText = JSON.parse(this.response).sig.cursos[0].turma_entrada;
+
+  
+	  
+	}
+  });
+  
+  xhr.open("GET", "https://cors-anywhere.herokuapp.com/https://api.sertao.ifrs.edu.br:8443/aluno/"+document.location.href.split('#')[1]+"?key=b'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyIjoiMjAxOTMwOTczNSIsImV4cCI6WyI3NzciXX0.xL4HJI3benIOVokDd0Bf6UTUar1wZtm4nA28P41uTKs'");
+  xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+  xhr.withCredentials = false;
+  xhr.send(data);
+  
+  function titleize(text) {
+	  var words = text.toLowerCase().split(" ");
+	  for (var a = 0; a < words.length; a++) {
+		  var w = words[a];
+		  words[a] = w[0].toUpperCase() + w.slice(1);
+	  }
+	  return words.join(" ");
+  }
+		  </script>
+
+
+
+
+
+
+
+
+
+
+
+</body></html>
