@@ -324,6 +324,9 @@ input[type=text]:placeholder {
       <label class="fadeIn second" for="login">Entre com o seu CPF</label>
       <input type="text" id="login" class="fadeIn second" name="login" placeholder="CPF">
       <input type="submit" id="submit" class="fadeIn fourth" value="Acessar">
+      <div class="spinner-border text-primary" role="status">
+        <span class="sr-only">Loading...</span>
+      </div>
     </form>
 
     <!-- Remind Passowrd -->
@@ -335,10 +338,54 @@ input[type=text]:placeholder {
 </div>	<script type="text/javascript">
 document.getElementById("submit").addEventListener("click", function(event){
   event.preventDefault();
-  document.getElementById("wrapper").classList.add("fadeout");
-  setTimeout(() => {location.replace("/meu_acesso/consulta.html#"+document.getElementById("login").value)}, 500);
+
+  var data = null;
+
+var xhr = new XMLHttpRequest();
+xhr.withCredentials = true;
+
+xhr.addEventListener("readystatechange", function () {
+  if (this.readyState === this.DONE) {
+
+    function padronize(obg){
+      var result = {};
+      obg = JSON.parse(obg);
+      if(obg.sig){
+    result.nome_completo = obg.sig.nome_completo
+    result.matricula = obg.sig.cursos[0].matricula
+    result.nome_curso = obg.sig.cursos[0].nome_curso
+    result.cod_curso = obg.sig.cursos[0].cod_curso
+    result.status_discente = obg.sig.cursos[0].status_discente
+    result.login = obg.sig.login
+  }else{
+    result.nome_completo = obg.campus.nome_completo
+    result.matricula = obg.campus.cursos[0].matricula
+    result.nome_curso = obg.campus.cursos[0].nome_curso[0]
+    result.cod_curso = obg.campus.cursos[0].cod_curso[0]
+    result.login = obg.campus.login
+    result.status_discente = "Ativo"
+  }
+  return JSON.stringify(result);
+
+}
+
+    console.log(JSON.parse(this.response));
+
+    localStorage.setItem("data", padronize(this.response));
+    document.getElementById("wrapper").classList.add("fadeout");
+  setTimeout(() => {location.replace("/meu_acesso/consulta.html")}, 500);
+  }
+});
+
+xhr.open("GET", "https://cors-anywhere.herokuapp.com/https://api.sertao.ifrs.edu.br:8443/aluno/"+document.getElementById("login").value+"?key=b'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyIjoiMjAxOTMwOTczNSIsImV4cCI6WyI3NzciXX0.xL4HJI3benIOVokDd0Bf6UTUar1wZtm4nA28P41uTKs'");
+xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+xhr.withCredentials = false;
+xhr.send(data);
   
 });
+
+
+
 		</script>
 
 
