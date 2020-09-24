@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-BR"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="robots" content="noindex, nofollow">
+
+    <title>Meu Acesso</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="./lib/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <link href="./lib/css.css" rel="stylesheet">
+
+    <script src="./lib/jquery.min.js.transferir"></script>
+    <script src="./lib/bootstrap.min.js.transferir"></script>
+</head>
+<body cz-shortcut-listen="true">
+    <div id="wrapper" class="wrapper">
+  <div id="formContent">
+    <!-- Tabs Titles -->
+
+    <!-- Icon -->
+    <div>
+      <br>
+      <img width="50px" src="lib/Gmail_29991.png">
+    </div>
+
+    <form style="padding: 15px;">
+<br>
+      <div ><span id="nome"></span> o seu email institucional é </div>
+      <div><input disabled id="email" type="text"></input><br>
+        <button onclick="copiar()" type="button" class="btn btn-primary">copiar</button><br>
+      </div>
+      <div>
+        <div><span id="nome"></span> a senha do primeiro acesso é </div> <br><input disabled id="senha" type="password"></input></div><br>
+        <div >
+      <div><br>
+        <button id="ver" onclick="revelar()" type="button" class="btn btn-primary">ver</button>
+        <button onclick="copiar2()" type="button" class="btn btn-primary">copiar</button>
+      </div><br>
+      <div ><span id="nome"></span> após entrar vc será solicitado para alterar essa senha </div><br>
+
+      <a target="_blank" href="https://accounts.google.com/signin"><button type="button" class="btn btn-primary">continuar para o gmail</button></a>
+
+      <br><br>
+      <button onclick="history.back();" type="button" class="btn btn-primary">voltar</button>
+    </form>
+
+
+    <!-- Remind Passowrd -->
+
+
+  </div>
+</div>	<script type="text/javascript">
+function revelar(){
+  if(document.getElementById("senha").disabled){
+    document.getElementById("senha").type="text";
+    document.getElementById("ver").innerText="desver";
+
+    document.getElementById("senha").disabled=false;
+  }else{
+    document.getElementById("ver").innerText="ver";
+    document.getElementById("senha").type="password";
+
+    document.getElementById("senha").disabled=true;
+
+  }
+
+}
+function copiar() {
+  var copyText = document.getElementById("email");
+  
+  copyText.disabled = false;
+  copyText.select();
+  copyText.setSelectionRange(0, 99999); /*For mobile devices*/
+
+  document.execCommand("copy");
+  copyText.disabled = true;
+
+}
+function copiar2() {
+  var copyText = document.getElementById("senha");
+  
+  copyText.disabled = false;
+  copyText.select();
+  copyText.setSelectionRange(0, 99999); /*For mobile devices*/
+
+  document.execCommand("copy");
+  copyText.disabled = true;
+
+}
+
+
+if (localStorage.getItem("data")){
+
+    var data = JSON.parse(localStorage.getItem("data"))
+    console.log(data);
+
+    document.getElementById("nome").innerText = titleize(data.nome_completo).split(" ")[0];
+    document.getElementById("email").value = parseInt(data.matricula)+ "@aluno.sertao.ifrs.edu.br";
+    document.getElementById("senha").value = data.login;
+    document.getElementById("wrapper").classList.add("fadeInDown");
+    }else{
+			location.replace("/meu_acesso/")
+		}
+
+
+function titleize(text) {
+    var words = text.toLowerCase().split(" ");
+    for (var a = 0; a < words.length; a++) {
+        var w = words[a];
+        words[a] = w[0].toUpperCase() + w.slice(1);
+    }
+    return words.join(" ");
+}
+		</script>
+
+
+</body></html>
