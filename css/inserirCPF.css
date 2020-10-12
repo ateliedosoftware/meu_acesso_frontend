@@ -2,12 +2,18 @@
 
 
 .img-women {
-    display: flex !important;
+    display: flex;
     justify-content: flex-end;
 }
 
+.texto-header{
+    font-family: 'Roboto';
+    top: 10px;
+}
+
 .img-calc {
- 
+    width: 50%;
+    height: auto;
 }
 
 main {
@@ -23,14 +29,27 @@ main {
     width: 320px;
     height: 175px;
     background-color: #DADADA;
+    border-radius: 20px;
+}
+
+.insereCPF {
+    text-align: center;
+    font-family: 'Roboto';
+    font-weight: bold;
+    color: #6E44FF;
+}
+
+#cpf {
+    height: 30px;
 }
 
 .main-btn {
     background-color: #5B3FFF !important;
     font-family: 'Roboto';
     font-style: normal;
-    font-weight: bold;
-    color: white;
+    color: #FFFFFF;
+    border-radius: 5px;
+    margin-top: 25px;
 }
 
 .botao {
@@ -42,4 +61,5 @@ main {
     display: flex;
     justify-content: center;
     padding: 10px;
+    margin-top: 15px;
 }
