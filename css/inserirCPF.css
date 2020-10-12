@@ -1,0 +1,45 @@
+
+
+
+.img-women {
+    display: flex !important;
+    justify-content: flex-end;
+}
+
+.img-calc {
+ 
+}
+
+main {
+    display: flex;
+    justify-content: center;
+}
+
+.insere {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 320px;
+    height: 175px;
+    background-color: #DADADA;
+}
+
+.main-btn {
+    background-color: #5B3FFF !important;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: bold;
+    color: white;
+}
+
+.botao {
+    display: flex;
+    justify-content: center;
+}
+
+.img {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+}
