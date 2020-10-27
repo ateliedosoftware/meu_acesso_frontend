@@ -1,0 +1,25 @@
+{
+  "name": "meu_acesso",
+  "version": "1.0.0",
+  "description": "### live demo: https://ateliedosoftware.github.io/meu_acesso/",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ateliedosoftware/meu_acesso.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ateliedosoftware/meu_acesso/issues"
+  },
+  "homepage": "https://github.com/ateliedosoftware/meu_acesso#readme",
+  "dependencies": {
+    "node-modules": "^1.0.1"
+  }
+}

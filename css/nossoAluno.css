@@ -1,0 +1,91 @@
+
+body{
+   background-color:  #E5E5E5;
+}
+
+.drawing{
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    z-index: -1;
+}
+
+.title-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+    padding: 5px;
+}
+
+.title{
+    font-family: 'Roboto';
+    font-weight: bold;
+    font-size: 28px;
+    text-align: start;
+    color: #ffffff;
+}
+
+.card {
+    width: 100% !important;
+    height: auto;
+}
+
+.card__title{
+    text-align: center !important;
+}
+
+.card__content {
+    text-align: center !important;
+}
+
+.contain1{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    align-content: flex-start;
+}
+
+.b{
+    display: flex;
+    width: 50%;
+    height: auto;
+}
+
+i.email{
+    color: #FF445A !important;
+}
+
+i.wifi{
+    color: #6E44FF;
+
+}
+
+i.groups{
+    color: #FF9E44;
+    
+}
+
+i.computer{
+    color: #000000;
+    
+}
+
+i.cast_for_education{
+    color: #19D464;
+    
+}
+
+i.school{
+    counter: #333333;
+    
+}
+
+
+.img{
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    margin-top: 15px;
+   
+}

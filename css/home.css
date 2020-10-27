@@ -1,0 +1,49 @@
+
+
+
+.header-img{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+}
+
+
+.main-content{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.title{
+    font-family: 'Roboto', sans-serif;
+    color: #333333;
+    font-style: normal;
+    text-align: center;
+}
+
+
+.text {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: normal;
+    color: #4F4F4F;
+    text-align: center;
+}
+
+.img {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+}
+
+
+.main-btn {
+    background-color: #5B3FFF !important;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: bold;
+    color: white;
+}
+
