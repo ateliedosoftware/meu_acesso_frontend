@@ -1,14 +1,26 @@
 
+.drawing{
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    z-index: -1;
+}
 
 
 .img-women {
     display: flex;
     justify-content: flex-end;
+    margin-right: 23px;
+    margin-top: 102px;
 }
 
 .texto-header{
     font-family: 'Roboto';
-    top: 10px;
+    font-weight: bold;
+    font-size: 28px;
+    text-align: start;
+    color: #ffffff;
+    margin-top: 50px;
 }
 
 .img-calc {
@@ -19,6 +31,7 @@
 main {
     display: flex;
     justify-content: center;
+    margin-top: 110px;
 }
 
 .insere {
