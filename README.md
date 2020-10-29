@@ -20,7 +20,7 @@ https://www.figma.com/file/SEQjKk2sVpBocqimnAVNBb/primeiro-acessov1?node-id=0%3A
 - [ ] validar acesso com senha
 - [ ] permitir troca de senha
 ### estilo 
-- [ ] usar flex box e icones para se aproximar da interface do figma
+- [x] usar flex box e icones para se aproximar da interface do figma
 - [x] [Estilo] adicionar ícones
 - [x] [Estilo] centralizar css
 - [x] [Estilo] melhorar o menu
