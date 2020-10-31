@@ -9,7 +9,7 @@ if (localStorage.getItem("data")){
 
     }else{
         
-		location.href = location.href.split(location.href.split('/')[location.href.split('/').length-1]).join("home.html");
+		if (location.href.split('/')[location.href.split('/').length-1] == 'nossoAluno.html')  location.href = location.href.split(location.href.split('/')[location.href.split('/').length-1]).join("home.html");
 }
 
 
