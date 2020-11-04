@@ -1,7 +1,10 @@
 # meu acesso
 
 ### live demo:
-https://ateliedosoftware.github.io/meu_acesso/
+POC1: https://ateliedosoftware.github.io/meu_acesso/
+
+POC2: https://ateliedosoftware.github.io/meu_acesso/html/home.html
+
 
 ### design e jornada do usuario
 https://www.figma.com/file/SEQjKk2sVpBocqimnAVNBb/primeiro-acessov1?node-id=0%3A1
