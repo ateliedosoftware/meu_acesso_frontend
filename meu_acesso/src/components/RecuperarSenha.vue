@@ -7,22 +7,24 @@
     <div class="grid grid-rows-2 flex justify-center mt-5 mb-10">
       <div class="flex justify-center"></div>
       <h2 class="text-lg text-gray-500">Matricula</h2>
-      <input v-model="matricula" class="p-1" type="text" />
+      <input v-model="matricula" class="p-1 border border-solid border-blue-500 rounded-md" placeholder="sua matricula" type="text" />
 
       <h2 class="text-lg mt-2 text-gray-500">Senha Atual</h2>
-      <input v-model="senhaAtual" class="p-1" type="password" name="" id="" />
+      <input v-model="senhaAtual" class="p-1 border border-solid border-blue-500 rounded-md" placeholder="senha atual" type="password" name="" id="" />
+
+      <!-- <div class="border border-solid border-red-700 border-2 m-1 p-5 rounded-lg"> -->
+      <h3 v-show="verificaSenha" class="flex justify-center mt-1 mb-1 pt-2 text-red-600">AS SENHAS DEVEM SER IGUAIS !!!</h3>
 
       <h2 class="text-lg mt-2 text-purple-700">Nova Senha</h2>
-      <input v-model="NovaSenha" class="p-1 border-purple-700 border-solid" type="password" name="" id="" />
+      <input v-model="NovaSenha" class="p-1 border border-solid border-blue-500 rounded-md" placeholder="nova senha" type="password" name="" id="" />
 
       <h2 class="text-lg mt-2 text-purple-700">Confirme sua Senha</h2>
-      <input v-model="ConfirmaSenha" class="p-1" type="password" name="" id="" />
-
+      <input v-model="ConfirmaSenha" id='confirma' class="p-1 border border-solid border-blue-500 rounded-md" placeholder="nova senha" type="password" name="" id="" />
     </div>
-
+  
        <router-link :to="{ name: 'recuperaremail' }">
            <div class="flex justify-center flex-grow-0 m-1">
-        <a >Redefinir por Email ?</a>
+        <a class="text-lg text-indigo-700 underline">Redefinir por Email ?</a>
            </div>
       </router-link>
 
@@ -64,6 +66,7 @@ export default {
           type: String,
           required: true,
         },
+        verificaSenha: Boolean,
       },
     };
   },
@@ -75,8 +78,23 @@ export default {
     entrar: InputEntrar,
   },
 
+  computed: {
+    verifica: () => {
+        document.getElementById('confirma').addEventListener('blur', () => {
+          if (this.NovaSenha !== this.ConfirmaSenha) {
+           return this.verificaSenha = true
+          }
+        })
+    }
+    
+
+  },
+
   methods: {
       Redefinir(){
+        if(verifica()){
+          return false;
+        }
           Login.recuperar(this.matricula, this.senhaAtual, this.NovaSenha, this.ConfirmaSenha)
           .then(resp => console.log(resp))
       }

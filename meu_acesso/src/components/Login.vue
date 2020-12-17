@@ -7,15 +7,15 @@
     <div class="grid grid-rows-2 flex justify-center mt-5 mb-10">
       <div class="flex justify-center"></div>
       <h2 class="text-lg text-purple-700">Matricula</h2>
-      <input v-model="matricula" class="p-1" type="text" />
+      <input v-model="matricula" class="p-1 border border-solid border-blue-500 rounded-md" placeholder="sua matricula" type="text" />
 
       <h2 class="text-lg mt-2 text-purple-700">Senha</h2>
-      <input v-model="senha" class="p-1" type="password" name="" id="" />
+      <input v-model="senha" class="p-1 border border-solid border-blue-500 rounded-md" placeholder="sua senha..." type="password" name="" id="" />
     </div>
 
        <router-link :to="{ name: 'recuperarsenha' }">
            <div class="flex justify-center flex-grow-0 m-1">
-        <a >Esqueceu a senha ?</a>
+        <a class="text-lg text-indigo-700 underline">Esqueceu a senha ?</a>
            </div>
       </router-link>
 
