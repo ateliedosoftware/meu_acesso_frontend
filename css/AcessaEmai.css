@@ -1,0 +1,118 @@
+
+body{
+    background-color:  #E5E5E5;
+ }
+ 
+ .drawing{
+     position: absolute;
+     left: 0px;
+     top: 0px;
+     z-index: -1;
+ }
+ 
+ .title-card {
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     margin: 10px;
+     padding: 5px;
+ }
+ 
+ .title{
+     font-family: 'Roboto';
+     font-weight: bold;
+     font-size: 28px;
+     text-align: start;
+     color: #ffffff;
+ }
+
+
+ .card {
+     width: 100% !important;
+     height: auto;
+ }
+ 
+ 
+ .card__content {
+     text-align: justify !important;
+ }
+ 
+ .contain1{
+     display: flex;
+     justify-content: space-around;
+     align-items: center;
+     align-content: flex-start;
+ }
+
+ .text-card{
+    font-family: 'Roboto';
+    font-weight: bold;
+    font-size: 16px;
+    text-align: start;
+    color: #ACA0D2;
+    
+ }
+ 
+ .b{
+     display: flex;
+     justify-content: center;
+     width: 100%;
+     height: auto;
+ }
+
+ .icon-gmail{
+    display: flex;
+    justify-content: flex-end;
+ }
+
+ .card-text{
+     display: flex;
+     justify-content: center;
+     align-items: center;
+
+ }
+
+ .card-text-p{
+    font-family: 'Roboto';
+    font-size: 11px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 28px;
+    letter-spacing: -1px;
+    text-align: left;
+    color: #D2A0A0;
+    
+ }
+ 
+ i.material-icons{
+     color: #D2A0A0;
+     font-size: 13px;
+
+ }
+
+
+
+.img-email{
+    display: flex;
+}
+
+.img{
+    width: 25%;
+    height: auto;
+}
+ 
+.btn-continuar{
+  display: flex;
+  justify-content: center;
+}
+
+.btn {
+    font-family: 'Roboto';
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 28px;
+    text-align: center;
+    background: #6E44FF;
+    
+}
