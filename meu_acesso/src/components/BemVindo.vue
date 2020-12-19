@@ -1,5 +1,6 @@
 <template>
-  <div class="grid grid-row-2 mt-5 p-0">
+  <div class="lg:mx-96 xl:mx-96 lg:px-42 lg:my-10">
+  <div class="grid grid-row-2 mt-5 p-0 lg:h-full">
     <div class="flex mx-auto">
       <svg
         width="190"
@@ -131,7 +132,9 @@
       <img class="p-5 m-5" src="../assets/logoIFRS-home.png" alt="" srcset="" />
     </div>
   </div>
+  </div>
 </template>
+
 
 <script>
 export default {};

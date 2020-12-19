@@ -1,23 +1,33 @@
 <template>
-  <div >
+  <div
+    class="bg-blue-5 lg:mx-20 sm:mx-0 sm:px-0 sm:my-0 xl:mx-96 lg:px-42 lg:my-10">
     <cabecalho titulo="Meu Acesso" />
 
-    <hr class="mt-40" />
+    <div class="flex justify-center">
+      <div class="grid grid-rows-2 mt-52 lg:mt-60">
+        <h2 class="text-lg text-purple-700 lg:h-0">Matricula</h2>
+        <input
+          v-model="matricula"
+          class="p-1 border border-solid border-blue-500 rounded-md"
+          placeholder="sua matricula"
+          type="text"/>
 
-    <div class="grid grid-rows-2 flex justify-center mt-5 mb-10">
-      <div class="flex justify-center"></div>
-      <h2 class="text-lg text-purple-700">Matricula</h2>
-      <input v-model="matricula" class="p-1 border border-solid border-blue-500 rounded-md" placeholder="sua matricula" type="text" />
-
-      <h2 class="text-lg mt-2 text-purple-700">Senha</h2>
-      <input v-model="senha" class="p-1 border border-solid border-blue-500 rounded-md" placeholder="sua senha..." type="password" name="" id="" />
+        <h2 class="text-lg mt-2 text-purple-700">Senha</h2>
+        <input
+          v-model="senha"
+          class="p-1 border border-solid border-blue-500 rounded-md"
+          placeholder="sua senha..."
+          type="password"
+          name=""
+          id=""/>
+      </div>
     </div>
-
-       <router-link :to="{ name: 'recuperarsenha' }">
-           <div class="flex justify-center flex-grow-0 m-1">
+    
+    <router-link :to="{ name: 'recuperarsenha' }">
+      <div class="flex justify-center flex-grow-0 m-1">
         <a class="text-lg text-indigo-700 underline">Esqueceu a senha ?</a>
-           </div>
-      </router-link>
+      </div>
+    </router-link>
 
     <div class="flex justify-center flex-grow-0">
       <router-link :to="{ name: 'aluno' }">
@@ -60,10 +70,9 @@ export default {
   },
 
   methods: {
-      Acessar(){
-          Login.login(this.matricula, this.senha)
-          .then(resp => console.log(resp))
-      }
+    Acessar() {
+      Login.login(this.matricula, this.senha).then((resp) => console.log(resp));
+    },
   },
 };
 </script>

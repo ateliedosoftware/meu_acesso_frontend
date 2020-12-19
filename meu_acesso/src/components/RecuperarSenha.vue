@@ -1,11 +1,11 @@
-<template>
+<template> 
+  <div class="lg:mx-20 sm:mx-0 sm:px-0 sm:my-0 xl:mx-96 lg:px-42 lg:my-10">
   <div>
     <cabecalho titulo="Recuperar Senha" />
 
-    <hr class="mt-40" />
-
-    <div class="grid grid-rows-2 flex justify-center mt-5 mb-10">
-      <div class="flex justify-center"></div>
+      
+      <div class="flex justify-center">
+    <div class="grid grid-rows-2 flex justify-center mt-52   lg:mt-60">
       <h2 class="text-lg text-gray-500">Matricula</h2>
       <input v-model="matricula" class="p-1 border border-solid border-blue-500 rounded-md" placeholder="sua matricula" type="text" />
 
@@ -21,6 +21,7 @@
       <h2 class="text-lg mt-2 text-purple-700">Confirme sua Senha</h2>
       <input v-model="ConfirmaSenha" id='confirma' class="p-1 border border-solid border-blue-500 rounded-md" placeholder="nova senha" type="password" name="" id="" />
     </div>
+    </div>
   
        <router-link :to="{ name: 'recuperaremail' }">
            <div class="flex justify-center flex-grow-0 m-1">
@@ -35,6 +36,7 @@
     </div>
 
     <img-ifrs />
+  </div>
   </div>
 </template>
 
