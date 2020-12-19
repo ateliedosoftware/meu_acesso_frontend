@@ -1,26 +1,27 @@
 <template>
+  <div class="lg:mx-20 sm:mx-0 sm:px-0 sm:my-0 xl:mx-96 lg:px-42 lg:my-10">
   <div>
     <cabecalho titulo="Redefinir por Email" />
 
-    <hr class="mt-40" />
-
-    <div class="grid grid-rows-2 flex justify-center mt-5 mb-10">
-      <div class="flex justify-center"></div>
+    <div class="flex justify-center">
+    <div class="grid grid-rows-2 mt-52 lg:mt-60">
       <h2 class="text-lg text-purple-700">Matricula</h2>
       <input v-model="matricula" class="p-1 border border-solid border-blue-500 rounded-md" placeholder="sua matricula" type="text" />
 
       <h2 class="text-lg mt-2 text-purple-700">Email</h2>
       <input v-model="email" class="p-1 border border-solid border-blue-500 rounded-md" placeholder="seu email" type="email" name="" id="" />
     </div>
+    </div>
 
 
-    <div class="flex justify-center flex-grow-0">
+    <div class="flex justify-center flex-grow-0 mt-5">
       <router-link :to="{ name: 'aluno' }">
         <botao rotulo="Recuperar - Email" @click="RedefinirEmail()" />
       </router-link>
     </div>
 
     <img-ifrs />
+  </div>
   </div>
 </template>
 

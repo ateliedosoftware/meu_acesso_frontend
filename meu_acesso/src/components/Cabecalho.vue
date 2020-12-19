@@ -1,7 +1,8 @@
 <template>
-  <div class="grid grid-rows-2 relative">
+<div class="bg-red-600 lg:mx-20 m-0 p-0">
+  <div class="sm:grid sm:grid-rows-2 sm:relative">
     <svg
-      class="w-full flex-shrink-0 absolute"
+      class="sm:w-full sm:my-0 sm:flex-shrink-0 absolute lg:rounded-3xl"
       viewBox="0 0 375 183"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -126,6 +127,7 @@
         </defs>
       </svg>
     </div>
+  </div>
   </div>
 </template>
 
