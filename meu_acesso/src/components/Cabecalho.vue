@@ -1,8 +1,8 @@
 <template>
-<div class="bg-red-600 lg:mx-20 m-0 p-0">
-  <div class="sm:grid sm:grid-rows-2 sm:relative">
+<div class="bg-red-600 lg:mx-20 md:mx-14 m-0 p-0">
+  <div class="sm:grid sm:grid-rows-2 md:relative sm:relative">
     <svg
-      class="sm:w-full sm:my-0 sm:flex-shrink-0 absolute lg:rounded-3xl"
+      class="sm:w-full sm:my-0 sm:flex-shrink-0 absolute sm:rounded-2xl md:rounded-3xl lg:rounded-3xl"
       viewBox="0 0 375 183"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -25,10 +25,10 @@
       </h2>
     </div>
 
-    <div class="absolute flex flex-shrink-0 justify-end">
+    <div class="absolute flex flex-shrink-0  justify-end">
       <svg
         width="133"
-        class="flex ml-52 mt-24"
+        class="flex ml-52 mt-24 lg:ml-64 md:ml-64 sm:ml-72"
         height="107"
         viewBox="0 0 133 107"
         fill="none"
