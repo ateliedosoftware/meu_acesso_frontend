@@ -1,10 +1,10 @@
 <template>
   <div
-    class="bg-blue-5 lg:mx-20 sm:mx-0 sm:px-0 sm:my-0 xl:mx-96 lg:px-42 lg:my-10">
+    class=" sm:mx-16 sm:px-0 sm:my-0 md:mx-20 md:px-0 md:my-0  lg:mx-20 xl:mx-96 lg:px-42 lg:my-10">
     <cabecalho titulo="Meu Acesso" />
 
     <div class="flex justify-center">
-      <div class="grid grid-rows-2 mt-52 lg:mt-60">
+      <div class="grid grid-rows-2 mt-52 sm:mt-64 md:mt-64 lg:mt-60">
         <h2 class="text-lg text-purple-700 lg:h-0">Matricula</h2>
         <input
           v-model="matricula"

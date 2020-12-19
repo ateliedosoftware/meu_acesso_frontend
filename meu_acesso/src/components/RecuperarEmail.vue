@@ -1,10 +1,10 @@
 <template>
-  <div class="lg:mx-20 sm:mx-0 sm:px-0 sm:my-0 xl:mx-96 lg:px-42 lg:my-10">
+  <div class="lg:mx-20 sm:mx-20 sm:px-0 sm:my-0 xl:mx-96 lg:px-42 lg:my-10">
   <div>
     <cabecalho titulo="Redefinir por Email" />
 
     <div class="flex justify-center">
-    <div class="grid grid-rows-2 mt-52 lg:mt-60">
+    <div class="grid grid-rows-2 mt-52 sm:mt-64 md:mt-64 lg:mt-60">
       <h2 class="text-lg text-purple-700">Matricula</h2>
       <input v-model="matricula" class="p-1 border border-solid border-blue-500 rounded-md" placeholder="sua matricula" type="text" />
 
