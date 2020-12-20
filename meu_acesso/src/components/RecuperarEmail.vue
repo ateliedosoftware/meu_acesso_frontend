@@ -1,5 +1,5 @@
 <template>
-  <div class="lg:mx-20 sm:mx-20 sm:px-0 sm:my-0 xl:mx-96 lg:px-42 lg:my-10">
+  <div class="lg:mx-20 sm:mx-20 sm:px-0 sm:my-0 xl:mx-96 lg:px-42 lg:my-10 lg:shadow-2xl">
   <div>
     <cabecalho titulo="Redefinir por Email" />
 
