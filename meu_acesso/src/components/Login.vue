@@ -40,7 +40,7 @@
 </template>
 
 <script>
-import Login from "../services/requests.js";
+
 import Botao from "./Botao.vue";
 import Cabecalho from "./Cabecalho.vue";
 import ImagemIFRS from "./ImagemIFRS.vue";
@@ -71,7 +71,7 @@ export default {
 
   methods: {
     Acessar() {
-      Login.login(this.matricula, this.senha).then((resp) => console.log(resp));
+     alert("login teste")
     },
   },
 };

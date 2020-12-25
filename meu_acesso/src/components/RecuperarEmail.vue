@@ -26,7 +26,6 @@
 </template>
 
 <script>
-import Login from "../services/requests.js";
 import Botao from "./Botao.vue";
 import Cabecalho from "./Cabecalho.vue";
 import ImagemIFRS from "./ImagemIFRS.vue";
@@ -57,8 +56,8 @@ export default {
 
   methods: {
       RedefinirEmail(){
-          Login.redefinirEmail(this.matricula, this.email)
-          .then(resp => console.log(resp))
+          // redefinirEmail(this.matricula, this.email)
+          // .then(resp => console.log(resp))
       }
   },
 };
