@@ -1,6 +1,6 @@
 <template>
   <div
-    class=" sm:mx-16 sm:px-0 sm:my-0 md:mx-20 md:px-0 md:my-0  lg:mx-20 xl:mx-96 lg:px-42 lg:my-10">
+    class=" sm:mx-16 sm:px-0 sm:my-0 md:mx-20 md:px-0 md:my-0  lg:mx-20 xl:mx-96 lg:px-42 lg:my-10 lg:shadow-2xl">
     <cabecalho titulo="Meu Acesso" />
 
     <div class="flex justify-center">
@@ -40,7 +40,7 @@
 </template>
 
 <script>
-import Login from "../services/requests.js";
+
 import Botao from "./Botao.vue";
 import Cabecalho from "./Cabecalho.vue";
 import ImagemIFRS from "./ImagemIFRS.vue";
@@ -71,7 +71,7 @@ export default {
 
   methods: {
     Acessar() {
-      Login.login(this.matricula, this.senha).then((resp) => console.log(resp));
+     alert("login teste")
     },
   },
 };
