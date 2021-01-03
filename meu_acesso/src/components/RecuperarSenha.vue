@@ -28,13 +28,6 @@
             id=""
           />
 
-          <h3
-            v-show="verificaSenha"
-            class="flex justify-center mt-1 mb-1 pt-2 text-red-600"
-          >
-            AS SENHAS DEVEM SER IGUAIS !!!
-          </h3>
-
           <h2 class="text-lg mt-2 text-purple-700">Nova Senha</h2>
           <input
             v-model="data.newPassword"
@@ -111,25 +104,16 @@ export default {
     "img-ifrs": ImagemIFRS,
   },
 
-  computed: {
-    verifica: () => {
-      document.getElementById("confirma").addEventListener("blur", () => {
-        if (this.NovaSenha !== this.ConfirmaSenha) {
-          return (this.verificaSenha = true);
-          document.get;
-        }
-      });
-    },
-  },
-
   methods: {
     Redefinir() {
       this.textBotao = 'Aguarde ....'
       let data = JSON.stringify(this.data);
       Requests.recuperar(data)
         .then((res) => {
+          if(res.status == 200){
           this.modal = true;
           this.message = res.data.message;
+          }
         })
         .catch((err) => {
           this.modal = true;
