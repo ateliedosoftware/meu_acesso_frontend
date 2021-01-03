@@ -93,7 +93,7 @@ export default {
         oldPassword: "",
       },
 
-      modal: false,
+      modal: true,
       message: "",
       textBotao: 'Redefinir Senha'
     };
