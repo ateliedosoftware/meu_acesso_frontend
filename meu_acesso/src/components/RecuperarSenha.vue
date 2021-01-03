@@ -56,11 +56,25 @@
         </div>
       </router-link>
 
-      <div class="flex justify-center flex-grow-0">
-        <router-link :to="{ name: 'aluno' }">
-          <botao rotulo="Redefinir Senha" tipo="submit" @click="Redefinir()" />
-        </router-link>
+      <div
+        v-show="modal"
+        class="fixed inset-0 w-full h-screen flex items-center justify-center bg-semi-75 p-8">
+        <div
+          class="relative  max-w-2xl bg-white shadow-2xl rounded-lg p-8 border border-solid border-purple-800">
+           <h2 class="text-lg mt-2 text-purple-700 ">{{ message }}</h2>
+            <router-link :to="{ name: 'aluno' }">
+              <div class="flex justify-center flex-grow-0 m-1">
+                <botao rotulo="Entrar" tipo="submit" />              
+              </div>
+            </router-link>
+        </div>
       </div>
+
+      <div class="flex justify-center flex-grow-0">
+        <botao :rotulo="textBotao" tipo="submit" @click="Redefinir()" />
+
+      </div>
+
 
       <!-- </form> -->
 
@@ -85,9 +99,12 @@ export default {
         newPassword: "",
         oldPassword: "",
       },
+
+      modal: false,
+      message: "",
+      textBotao: 'Redefinir Senha'
     };
   },
-
   components: {
     botao: Botao,
     cabecalho: Cabecalho,
@@ -100,6 +117,7 @@ export default {
       document.getElementById("confirma").addEventListener("blur", () => {
         if (this.NovaSenha !== this.ConfirmaSenha) {
           return (this.verificaSenha = true);
+          document.get;
         }
       });
     },
@@ -107,12 +125,17 @@ export default {
 
   methods: {
     Redefinir() {
+      this.textBotao = 'Aguarde ....'
       let data = JSON.stringify(this.data);
       Requests.recuperar(data)
         .then((res) => {
-          alert(res.data.message);
+          this.modal = true;
+          this.message = res.data.message;
         })
-        .catch((err) => console.log("Falhou " + err));
+        .catch((err) => {
+          this.modal = true;
+          this.message = res.data.message;
+        })
     },
   },
 };
