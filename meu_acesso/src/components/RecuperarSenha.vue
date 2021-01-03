@@ -89,7 +89,7 @@ import Requests from "../services/requests";
 import Botao from "./Botao.vue";
 import Cabecalho from "./Cabecalho.vue";
 import ImagemIFRS from "./ImagemIFRS.vue";
-import InputEntrar from "./InputEntrar.vue";
+
 
 export default {
   data() {
@@ -109,7 +109,6 @@ export default {
     botao: Botao,
     cabecalho: Cabecalho,
     "img-ifrs": ImagemIFRS,
-    entrar: InputEntrar,
   },
 
   computed: {
