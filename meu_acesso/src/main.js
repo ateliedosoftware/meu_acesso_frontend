@@ -3,7 +3,6 @@ import App from './App.vue'
 import './index.css'
 
 
-
 import { createWebHistory, createRouter } from "vue-router";
 
 import BemVindo from './components/BemVindo.vue'
