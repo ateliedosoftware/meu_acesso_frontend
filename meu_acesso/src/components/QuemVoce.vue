@@ -5,7 +5,7 @@
 
     <div class="flex justify-center flex-wrap mx-5 md:mx-auto">
       <div class="grid grid-cols-2 mt-32 md:mt-32 relative">
-        <card @click="Add()" icon="school" name="Nosso Aluno" />
+        <card  icon="school" name="Nosso Aluno" />
 
         <card  icon="nature_people" name="Servidor do Campus" />
 
@@ -39,9 +39,7 @@ export default {
   },
 
   methods: {
-  Add() {
-      this.$router.push()
-  }
+  
   },
 };
 </script>

@@ -26,6 +26,10 @@ export default {
         return http.post('changepassword/', matricula)
     },
 
+    search:(matricula) => {
+        return http.post(`search/sAMAccountName/${matricula}`)
+    },
+
     redefinirEmail:(matricula, email) => {
         return axios.post({
             url: CORS+'https://senhadc.sertao.ifrs.edu.br/?action=sendtoken',
