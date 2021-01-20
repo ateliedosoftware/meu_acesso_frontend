@@ -7,6 +7,7 @@
 
       <!-- <form @submit.prevent="Redefinir()" method="POST"> -->
       <div class="flex justify-center">
+      
         <div
           class="grid grid-rows-2 flex justify-center mt-52 sm:mt-64 md:mt-72 lg:mt-60"
         >
@@ -52,14 +53,13 @@
       <div
         v-show="modal"
         class="fixed inset-0 w-full h-screen flex items-center justify-center bg-semi-75 p-8">
+
         <div
           class="relative  max-w-2xl bg-white shadow-2xl rounded-lg p-8 border border-solid border-purple-800">
            <h2 class="text-lg mt-2 text-purple-700 ">{{ message }}</h2>
-            <router-link :to="{ name: 'aluno' }">
               <div class="flex justify-center flex-grow-0 m-1">
-                <botao rotulo="Entrar" tipo="submit" />              
+                <botao rotulo="Entrar" tipo="submit" v-on:click="closeModal"/>              
               </div>
-            </router-link>
         </div>
       </div>
 
@@ -67,10 +67,6 @@
         <botao :rotulo="textBotao" tipo="submit" @click="Redefinir()" />
 
       </div>
-
-
-      <!-- </form> -->
-
       <img-ifrs />
     </div>
   </div>
@@ -92,8 +88,7 @@ export default {
         newPassword: "",
         oldPassword: "",
       },
-
-      modal: true,
+      modal: false,
       message: "",
       textBotao: 'Redefinir Senha'
     };
@@ -104,21 +99,34 @@ export default {
     "img-ifrs": ImagemIFRS,
   },
 
+  mounted() {
+
+  },
+
+  updated(){
+  },
+
   methods: {
     Redefinir() {
       this.textBotao = 'Aguarde ....'
-      let data = JSON.stringify(this.data);
-      Requests.recuperar(data)
+      Requests.recuperar(this.data)
         .then((res) => {
           if(res.status == 200){
           this.modal = true;
           this.message = res.data.message;
+          this.$router.push({ name: 'aluno' })
           }
         })
         .catch((err) => {
-          this.modal = true;
-          this.message = res.data.message;
+          console.error(err.message);
+            this.message = `Não foi possivel trocar a senha do usuário ${this.data.username}`;
+            this.modal = true;
+            this.$router.push({ name: 'recuperarsenha' })
         })
+    },
+    closeModal() {
+      this.modal = false;
+      this.$forceUpdate();
     },
   },
 };

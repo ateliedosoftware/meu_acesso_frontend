@@ -15,7 +15,7 @@
 
 
     <div class="flex justify-center flex-grow-0 mt-5">
-      <router-link :to="{ name: 'aluno' }">
+      <router-link :to="{ name: 'quemVoce' }">
         <botao rotulo="Recuperar - Email" @click="RedefinirEmail()" />
       </router-link>
     </div>
