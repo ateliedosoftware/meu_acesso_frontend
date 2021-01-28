@@ -50,7 +50,7 @@ export default {
     return {
       props: {
         matricula: {
-          type: String,
+          type: Number,
           required: true,
         },
         senha: {

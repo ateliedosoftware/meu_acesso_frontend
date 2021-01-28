@@ -84,9 +84,18 @@ export default {
   data() {
     return {
       data: {
-        username: "",
-        newPassword: "",
-        oldPassword: "",
+        username: {
+          type: Number,
+          required: true,
+        },
+        newPassword: {
+          type: String,
+          required: true,
+        },
+        oldPassword: {
+          type: String,
+          required: true,
+        },
       },
       modal: false,
       message: "",
@@ -109,20 +118,21 @@ export default {
   methods: {
     Redefinir() {
       this.textBotao = 'Aguarde ....'
-      Requests.recuperar(this.data)
-        .then((res) => {
-          if(res.status == 200){
-          this.modal = true;
-          this.message = res.data.message;
-          this.$router.push({ name: 'aluno' })
-          }
-        })
-        .catch((err) => {
-          console.error(err.message);
-            this.message = `Não foi possivel trocar a senha do usuário ${this.data.username}`;
-            this.modal = true;
-            this.$router.push({ name: 'recuperarsenha' })
-        })
+      alert(this.data)
+      // Requests.recuperar(this.data)
+      //   .then((res) => {
+      //     if(res.status == 200){
+      //     this.modal = true;
+      //     this.message = res.data.message;
+      //     this.$router.push({ name: 'aluno' })
+      //     }
+      //   })
+      //   .catch((err) => {
+      //     console.error(err.message);
+      //       this.message = `Não foi possivel trocar a senha do usuário ${this.data.username}`;
+      //       this.modal = true;
+      //       this.$router.push({ name: 'recuperarsenha' })
+      //   })
     },
     closeModal() {
       this.modal = false;
