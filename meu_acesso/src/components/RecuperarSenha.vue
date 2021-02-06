@@ -112,10 +112,21 @@ export default {
 
   },
 
+  computed: () => {
+
+    //  reversedMessage: function () {
+    //   // `this` points to the vm instance
+    //   return this.message.split('').reverse().join('')
+    // }
+
+
+  },
+
   updated(){
   },
 
   methods: {
+
     Redefinir() {
       this.textBotao = 'Aguarde ....'
       alert(this.data)
